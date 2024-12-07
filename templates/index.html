@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Risk Prediction</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Geospatial Risk Prediction</h1>
+        <form action="/predict" method="POST">
+            <label for="location">Location Name:</label>
+            <select id="location" name="location" required>
+                <option value="" disabled selected>Select a location</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Bengaluru">Bengaluru</option>
+                <option value="Pune">Pune</option>
+                <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                <option value="Guwahati">Guwahati</option>
+                <option value="Bhubaneswar">Bhubaneswar</option>
+                <option value="Nagpur">Nagpur</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Ahmedabad">Ahmedabad</option>
+                <option value="Jaipur">Jaipur</option>
+                <option value="Lucknow">Lucknow</option>
+                <option value="Patna">Patna</option>
+                <option value="Indore">Indore</option>
+                <option value="Vadodara">Vadodara</option>
+                <option value="Coimbatore">Coimbatore</option>
+                <option value="Visakhapatnam">Visakhapatnam</option>
+                <option value="Madurai">Madurai</option>
+                <option value="Surat">Surat</option>
+                <option value="Nashik">Nashik</option>
+                <option value="Jabalpur">Jabalpur</option>
+                <option value="Vijayawada">Vijayawada</option>
+                <option value="Mysuru">Mysuru</option>
+                <option value="Udaipur">Udaipur</option>
+                <option value="Jammu">Jammu</option>
+                <option value="Raipur">Raipur</option>
+                <option value="Gwalior">Gwalior</option>
+                <option value="Bhopal">Bhopal</option>
+                <option value="Kochi">Kochi</option>
+                <option value="Aurangabad">Aurangabad</option>
+                <option value="Rajkot">Rajkot</option>
+                <option value="Dehradun">Dehradun</option>
+                <option value="Agra">Agra</option>
+            </select>
+            
+            <label for="time_choice">Time Choice:</label>
+            <select id="time_choice" name="time_choice" required>
+                <option value="month">Month</option>
+                <option value="season">Season</option>
+            </select>
+            
+            <label for="value">Enter Value (Month: 1-12, Season: 1-4):</label>
+            <input type="number" id="value" name="value" min="1" max="12" required>
+            
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>

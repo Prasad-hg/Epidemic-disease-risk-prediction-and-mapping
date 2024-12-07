@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Risk Prediction Result</title>    
+</head>
+<body>
+    <div class="container">
+        {% if error %}
+            <h2>Error: {{ error }}</h2>
+        {% else %}
+            <h2>Prediction for {{ location }}</h2>
+            <p><strong>Risk Level:</strong> {{ risk_level }}</p>
+            <p><strong>Probability Score:</strong> {{ probability_score }}</p>
+            <p><strong>Top Contributing Factors:</strong> {{ factors }}</p>
+            <a href="/heatmap" target="_blank" class="button">View Heat Map</a>
+        {% endif %}
+        <a href="/"  class="button1">Go Back</a>
+    </div>
+    
+</body>
+</html>
